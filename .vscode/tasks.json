@@ -1,0 +1,67 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build array_merge_test",
+            "command": "g++ -Wall -g -o array_merge_test array_merge.c array_merge_test.cpp -lgtest",
+            "options": {
+                "cwd": "array_merge"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "build mergesort_test",
+            "command": "g++ -Wall -g -o mergesort_test mergesort.c mergesort_test.cpp -lgtest",
+            "options": {
+                "cwd": "mergesort"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "run array_merge_test",
+            "command": "./array_merge_test",
+            "options": {
+                "cwd": "array_merge"
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "run mergesort_test",
+            "command": "./mergesort_test",
+            "options": {
+                "cwd": "mergesort"
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "valgrind array_merge_test",
+            "command": "valgrind --leak-check=full ./array_merge_test",
+            "options": {
+                "cwd": "array_merge"
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "valgrind mergesort_test",
+            "command": "valgrind --leak-check=full ./mergesort_test",
+            "options": {
+                "cwd": "mergesort"
+            },
+            "group": "test"
+        }
+    ]
+}
