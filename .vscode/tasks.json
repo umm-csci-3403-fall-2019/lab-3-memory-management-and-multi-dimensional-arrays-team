@@ -6,7 +6,7 @@
         {
             "type": "shell",
             "label": "build array_merge_test",
-            "command": "g++ -Wall -g -o array_merge_test array_merge.c array_merge_test.cpp -lgtest",
+            "command": "g++ -Wall -g -o array_merge_test array_merge.c ../mergesort/mergesort.c array_merge_test.cpp -lgtest",
             "options": {
                 "cwd": "array_merge"
             },
